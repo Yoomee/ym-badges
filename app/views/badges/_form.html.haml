@@ -1,0 +1,8 @@
+=semantic_form_for(badge) do |form|
+  =form.inputs do
+    =form.input :slug
+    =form.input :name
+    =form.input :description, :input_html => {:rows => 5, :class => 'span6'}
+    =form.input :image, :as => :image
+  =form.buttons do
+    =form.commit_button 'Save'

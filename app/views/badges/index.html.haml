@@ -1,0 +1,26 @@
+.row
+  .span12
+    %h1=title("Badges")
+-if @badges.empty?
+  .row
+    .span12
+      %p There are no badges yet.
+-else
+  -@badges.each do |badge|
+    .row.mt-2
+      .span2
+        -if badge.image
+          =image_for(badge, '170x')
+        -else
+          =image_for(badge, '170x', :class => 'img-circle')
+      .span6
+        %h3=badge.name
+        =simple_format(badge.description)
+        %p
+          =link_to('Edit', edit_badge_path(badge))
+          =link_to('Delete', badge, :method => :delete, :confirm => 'Are you sure?')
+
+.row.mt-2
+  .span12
+    =options_panel do
+      =link_to('+ New badge', new_badge_path, :class => 'btn')
