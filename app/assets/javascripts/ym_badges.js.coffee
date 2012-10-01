@@ -1,2 +1,2 @@
 $ ->
-  setTimeout("$('#new-badge').modal('show')", 0)
+  setTimeout("$('.new-badge').modal('show')", 0)
