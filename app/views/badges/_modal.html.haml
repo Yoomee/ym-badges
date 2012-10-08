@@ -10,6 +10,6 @@
         -else
           =image_for(badge, '150x', :class => 'img-circle pull-left mr-1')
       .span9
-        =simple_format(badge.description)
+        =simple_format(badge.award_message)
   .modal-footer
     =link_to('Close', '#', :class => 'btn', :"data-dismiss" => 'modal', :"aria-hidden" => true)

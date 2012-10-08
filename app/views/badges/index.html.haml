@@ -15,7 +15,10 @@
           =image_for(badge, '170x', :class => 'img-circle')
       .span6
         %h3=badge.name
+        %h4 Description
         =simple_format(badge.description)
+        %h4 Award message
+        =simple_format(badge.award_message)
         %p
           =link_to('Edit', edit_badge_path(badge), :class => 'btn btn-mini')
           =link_to('Delete', badge, :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger')

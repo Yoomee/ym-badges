@@ -20,6 +20,7 @@ module YmBadges
 
         try_migration_template "migrations/create_badges.rb", "db/migrate/create_badges"
         try_migration_template "migrations/create_badge_awardings.rb", "db/migrate/create_badge_awardings"
+        try_migration_template "migrations/add_award_message_to_badges.rb", "db/migrate/add_award_message_to_badges"
       end
 
     end
