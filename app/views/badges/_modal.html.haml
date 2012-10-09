@@ -1,7 +1,8 @@
 .new-badge.modal.fade.hide
   .modal-header
     %button.close{:"data-dismiss" => 'modal', :"aria-hidden" => true} &times;
-    %h3=badges.size > 1 ? "You've won #{badges.size} badges" : "You've won a new badge"
+    %h3
+      =badges.size > 1 ? "You've won #{badges.size} new badges!" : "You've won a new badge!"
   .modal-body
     -badges.each_with_index do |badge, idx|
       .row-fluid{:id => "badge-award-modal-#{idx}", :class => "#{idx == 0 ? "" : "hide"}"}
