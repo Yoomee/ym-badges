@@ -1,15 +1,17 @@
 .new-badge.modal.fade.hide
   .modal-header
     %button.close{:"data-dismiss" => 'modal', :"aria-hidden" => true} &times;
-    %h3 You've won a new badge
+    %h3=badges.size > 1 ? "You've won #{badges.size} badges" : "You've won a new badge"
   .modal-body
-    .row-fluid
-      .span3
-        -if badge.image
-          =image_for(badge, '150x')
-        -else
-          =image_for(badge, '150x', :class => 'img-circle pull-left mr-1')
-      .span9
-        =simple_format(badge.award_message)
+    -badges.each_with_index do |badge, idx|
+      .row-fluid{:id => "badge-award-modal-#{idx}", :class => "#{idx == 0 ? "" : "hide"}"}
+        .span3
+          -if badge.image
+            =image_for(badge, '150x')
+          -else
+            =image_for(badge, '150x', :class => 'img-circle pull-left mr-1')
+        .span9
+          =simple_format(badge.award_message)
   .modal-footer
-    =link_to('Close', '#', :class => 'btn', :"data-dismiss" => 'modal', :"aria-hidden" => true)
+    =link_to("Next", "#", :class => 'btn', :id => "badge_announcement_next") if badges.size > 1
+    =link_to('Close', '#', :class => "btn #{badges.size > 1 ? 'hide' : ''}", :id => "badge_announcement_close", :"data-dismiss" => 'modal', :"aria-hidden" => true)
