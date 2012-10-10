@@ -5,7 +5,7 @@ module YmBadges::BadgesHelper
     if (badge_awardings = current_user.badge_awardings.where(:notified => false)).present?
       badges = badge_awardings.collect(&:badge).uniq
       badge_awardings.update_all("notified = true")
-      (render 'badges/modal', :badges => badges).html_safe
+      (render 'badges/award_modal', :badges => badges).html_safe
     end
   end
 

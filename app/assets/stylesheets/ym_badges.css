@@ -9,3 +9,6 @@ form.badge {
   text-shadow: inherit;
   background-color: inherit;
 }
+.carousel-control.award-badge-carousel {
+  top:  100%;
+}
