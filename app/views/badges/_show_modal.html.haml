@@ -1,0 +1,15 @@
+.modal.fade.hide{:id => "badge#{badge.id}"}
+  .modal-header
+    %button.close{:"data-dismiss" => 'modal', :"aria-hidden" => true} &times;
+    %h3=badge.name
+  .modal-body
+    .row-fluid
+      .span3
+        -if badge.image
+          =image_for(badge, '150x')
+        -else
+          =image_for(badge, '150x', :class => 'img-circle pull-left mr-1')
+      .span9
+        =simple_format(badge.description)
+  .modal-footer
+    =link_to('Close', '#', :class => 'btn', :"data-dismiss" => 'modal', :"aria-hidden" => true)

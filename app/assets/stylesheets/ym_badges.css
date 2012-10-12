@@ -12,3 +12,29 @@ form.badge {
 .carousel-control.award-badge-carousel {
   top:  100%;
 }
+.badge-link {
+  position: relative;
+}
+.badge-link a:hover {
+  text-decoration: none;
+}
+.badge-link a:focus {
+  border: none;
+  outline: none;
+}
+.badge-count {
+  position: absolute;
+  top: 17px;
+  right: 101px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 25px;
+  text-align: center;
+  color: white;
+  background: #F84A33;
+  width: 28px;
+  height: 28px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
