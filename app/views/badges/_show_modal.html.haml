@@ -1,7 +1,9 @@
+-times_won ||= 1
 .modal.fade.hide{:id => "badge#{badge.id}"}
   .modal-header
     %button.close{:"data-dismiss" => 'modal', :"aria-hidden" => true} &times;
-    %h3=badge.name
+    %h3
+      =times_won > 1 ? "#{times_won} #{badge.name} badges" : badge.name
   .modal-body
     .row-fluid
       .span3
@@ -11,5 +13,8 @@
           =image_for(badge, '150x', :class => 'img-circle pull-left mr-1')
       .span9
         =simple_format(badge.description)
+        -if times_won > 1
+          -number_of_times_won = times_won == 2 ? "twice." : "#{times_won} times."
+          %p=current_user == user ? "You've won this badge #{number_of_times_won}" : "#{user.first_name} won this badge #{number_of_times_won}"
   .modal-footer
     =link_to('Close', '#', :class => 'btn', :"data-dismiss" => 'modal', :"aria-hidden" => true)
