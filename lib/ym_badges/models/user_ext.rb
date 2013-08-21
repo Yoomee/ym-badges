@@ -6,7 +6,7 @@ module YmBadges::UserExt
   end
 
   def award_badge!(slug)
-    return true if !Settings.allow_multiple_awardings_of_badge && badges.exists?(:slug => slug)
+    return true if !Settings.allow_multiple_awardings_of_badge && badges.exists?(:slug => slug.to_s)
     if badge = ::Badge.find_by_slug(slug.to_s)
       self.badges << badge
     end
