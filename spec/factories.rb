@@ -6,7 +6,7 @@ FactoryGirl.define do
     description "Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus"
   end
   
-  factory :badge_awarding, :class => "YmBadges::BadgeAwarding" do
+  factory :badge_awarding do
     badge
     user
   end

@@ -16,6 +16,7 @@ module YmBadges
         # try_migration_template "migrations/create_pages.rb", "db/migrate/create_pages"
 
         copy_file "models/badge.rb", "app/models/badge.rb"
+        copy_file "models/badge_awarding.rb", "app/models/badge_awarding.rb"
         copy_file "controllers/badges_controller.rb", "app/controllers/badges_controller.rb"
 
         try_migration_template "migrations/create_badges.rb", "db/migrate/create_badges"
