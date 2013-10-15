@@ -22,10 +22,13 @@ form.badge {
   border: none;
   outline: none;
 }
+.badge-container {
+  display: inline-block;
+}
 .badge-count {
   position: absolute;
-  bottom: 17px;
-  right: 101px;
+  bottom: 5px;
+  right: 19px;
   font-size: 17px;
   font-weight: bold;
   line-height: 25px;

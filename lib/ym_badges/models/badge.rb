@@ -6,7 +6,7 @@ module YmBadges::Badge
     base.validates(:slug, :presence => true, :uniqueness => true)
     base.validates(:name, :presence => true)
     base.image_accessor :image
-    base.send(:validates_property, :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image")
+    base.send(:validates_property, :format, :of => :image, :in => [:jpeg, :jpg, :png, :gif], :message => "must be an image", :case_sensitive => false)
   end
 
 

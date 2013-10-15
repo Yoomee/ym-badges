@@ -1,7 +1,7 @@
-.center
-  -badge_id_and_count = user.badges.count(:group => ["badges.id"])
-  -badge_id_and_count.each do |badge_id, count|
-    -badge = Badge.find(badge_id)
+-badge_id_and_count = user.badges.count(:group => ["badges.id"])
+-badge_id_and_count.each do |badge_id, count|
+  -badge = Badge.find(badge_id)
+  .badge-container
     .badge-link
       =link_to "#badge#{badge_id}", :data => {:toggle => 'modal'} do
         -if badge.image
@@ -12,4 +12,3 @@
           .badge-count
             ="x#{count}"
     =render "badges/show_modal", :badge => badge, :times_won => count, :user => user
-    %br
